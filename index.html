@@ -42,7 +42,6 @@
    			transform: scale(1.25);
     		box-shadow: 0px 4px 10px gold;
 		}
-</style>
     </style>
 	<title>Random Number Generator</title>
 		<script>
@@ -61,15 +60,20 @@
 			function toggleDarkMode() {
 				document.body.classList.toggle("dark-mode");
 			}
+			function changeColor() {
+    			let nameElement = document.getElementById("name");
+				let favoriteColor = "gold";
+				nameElement.style.color = favoriteColor;
+    		}
 		</script>
 </head>
 <body>
     <div class="container">
         <header class="main-info">
 		<a href="me-300-by-300.jpeg">
-			<img src="me-800-by-800.jpeg" alt="Samuel Warner" class="center"></a>
-		<h1>Samuel Warner&lsquo;s Introductions Website</h1>
-        	<h1>Preferred Name: Sam</h1>
+			<img src="me-800-by-800.jpeg" alt="Sam" class="center"></a>
+		<h1 id="name" onclick="changeColor()">Samuel Warner&lsquo;s Introduction Website</h1>
+		<h1>Preferred Name: Sam</h1>
 		<h1>    email: 
 			<a href="https://mail.google.com">
 			samuelrwarner@lewisu.edu</a>
