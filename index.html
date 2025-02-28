@@ -11,7 +11,6 @@
         .container {
             width: 80%;
             margin: auto;
-            overflow: hidden;
         }
         .main-info {
             background: #333;
@@ -21,7 +20,7 @@
         .main-info h1 {
             margin: 0;
         }
-        .lewis, .course, .job, .Last-Updated, .Introduction, .What-I-Hope-to-Learn-in-this-Course, .My-Favorite-Hobby-and-Activity, .fun-fact, .Random-Number-Generator {
+        .lewis, .course, .job, .Last-Updated, .Introduction, .What-I-Hope-to-Learn-in-this-Course, .My-Favorite-Hobby-and-Activity, .fun-fact, .Random-Number-Generator, .Flight-Progress {
             background: #e7e7e7;
             padding: 15px;
             margin-bottom: 10px;
@@ -32,6 +31,18 @@
 			margin-right: auto;
 			width: 50%;
 		}
+		.dark-mode {
+        	background-color: #333;
+        	color: black;
+    	}
+		section {
+    		transition: transform 0.8s ease-in-out, box-shadow 0.8s ease-in-out;
+		}
+		section:hover {
+   			transform: scale(1.25);
+    		box-shadow: 0px 4px 10px gold;
+		}
+</style>
     </style>
 	<title>Random Number Generator</title>
 		<script>
@@ -46,6 +57,9 @@
 	
 				let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
 				document.getElementById("result").innerText = "Random Number: " + randomNumber;
+			}
+			function toggleDarkMode() {
+				document.body.classList.toggle("dark-mode");
 			}
 		</script>
 </head>
@@ -65,11 +79,11 @@
 			storybookplum98</a>
 		</h1>
         </header>
+	<button onclick="toggleDarkMode()">Toggle Dark Mode</button>
 	<section class="Introduction">
 		<h2>Introduction</h2>
-		<p>Hello, my name is Samuel Warner. I'm from Eagle River, WI, about six hours north of here. I have two brothers, my mom, dad, two dogs and two cats. My major is Aviation Flight Technology.</p>
+		<p>Hello, my name is Samuel Warner. I'm from Eagle River, WI, about six hours north of Lewis University. I have two brothers, my mom, dad, two dogs and two cats. My major is Aviation Flight Technology.</p>
 	</section>
-
 	<section class="What-I-Hope-to-Learn-in-this-Course">
 		<h2>What I Hope to Learn in this Course</h2>
 		<ul style="list-style-type: square;">
@@ -96,9 +110,8 @@
 		<ul style="list-style-type: square;">
 			<li>Hockey</li>
 			<li>Video Games</li>
-			<li>
-				<a href="https://www.pdga.com/news/what-disc-golf-guide-parents-kids">
-				Frisbee Golf</a>
+			<li><a href="https://www.pdga.com/news/what-disc-golf-guide-parents-kids">
+			Frisbee Golf</a>
 			</li>
 			<li>Reading</li>
 			<li>Hiking</li>
@@ -111,6 +124,10 @@
 			<li>I like Warhammer 40K</li>
 			<li>I have a scar on my left leg from Hockey</li>
 		</ul>
+	</section>
+	<section class="Flight-Progress">
+		<h2>Flight Training Progress</h2>
+		<progress value="90" max="100"></progress> 90%
 	</section>
 	<section class="Last-Updated">
 		<h2>Last Updated</h2>
